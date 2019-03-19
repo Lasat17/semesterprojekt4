@@ -8,10 +8,10 @@
       <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>AsteroidsOSGi-branding</artifactId>
+  <artifactId>Unicornicopia-branding</artifactId>
   <packaging>nbm</packaging>
 
-  <name>AsteroidsOSGi-branding</name>
+  <name>Unicornicopia-branding</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
