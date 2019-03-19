@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>dk.sdu.mmmi.cbse</groupId>
-        <artifactId>AsteroidsOSGi-parent</artifactId>
+        <artifactId>Unicornicopia-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>Common</artifactId>
@@ -29,6 +29,11 @@
             <artifactId>gdx</artifactId>
             <version>1.9.6</version>
             <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>Core</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
     <build>

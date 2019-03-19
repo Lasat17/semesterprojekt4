@@ -30,3 +30,11 @@
 /Unicornicopia/Core/target/
 /Unicornicopia/CommonEnemy/target/
 /Unicornicopia/Enemy/target/
+/Unicornicopia/CommonWorldTransport/target/
+/Unicornicopia/CommonWorldObject/target/
+/Unicornicopia/CommonMap/target/
+/Unicornicopia/CommonPickUp/target/
+/Unicornicopia/CommonWeapon/target/
+/Unicornicopia/Player/target/
+/Unicornicopia/CommonEntity/target/
+/Unicornicopia/UserInterface/target/

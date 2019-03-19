@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import dk.sdu.mmmi.cbse.Game;
 
 public class Entity implements Serializable {
     private final UUID ID = UUID.randomUUID();
