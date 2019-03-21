@@ -5,7 +5,6 @@ import java.io.Serializable;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
-import dk.sdu.mmmi.cbse.Game;
 
 public class Entity implements Serializable {
     private final UUID ID = UUID.randomUUID();
@@ -52,6 +51,14 @@ public class Entity implements Serializable {
 
     public String getID() {
         return ID.toString();
+    }
+
+    public float getShapeX() {
+        return x;
+    }
+
+    public float getShapeY() {
+        return y;
     }
 
 }

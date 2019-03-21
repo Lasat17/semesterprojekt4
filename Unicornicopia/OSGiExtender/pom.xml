@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>dk.sdu.mmmi.cbse</groupId>
-        <artifactId>AsteroidsOSGi-parent</artifactId>
+        <artifactId>Unicornicopia-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>OSGiExtender</artifactId>
@@ -38,12 +38,6 @@
             <!--<artifactId>OSGiEnemy</artifactId>-->
             <!--<version>${project.version}</version>-->
         <!--</dependency>-->
-
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>OSGiCore</artifactId>
-            <version>${project.version}</version>
-        </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>OSGiLibGDX</artifactId>
@@ -51,7 +45,7 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>OSGiEnemy</artifactId>
+            <artifactId>Core</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
