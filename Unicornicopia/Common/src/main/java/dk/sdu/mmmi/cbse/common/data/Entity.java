@@ -5,7 +5,6 @@ import java.io.Serializable;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
-import dk.sdu.mmmi.cbse.Game;
 
 public class Entity implements Serializable {
     private final UUID ID = UUID.randomUUID();
@@ -13,9 +12,11 @@ public class Entity implements Serializable {
     private float radius;
     private Map<Class, EntityPart> parts;
     
+    //starting position
     protected float x;
     protected float y;
 
+    //movement position
     protected float dx;
     protected float dy;
 
@@ -25,6 +26,86 @@ public class Entity implements Serializable {
 
     protected int width;
     protected int height;
+
+    public Map<Class, EntityPart> getParts() {
+        return parts;
+    }
+
+    public void setParts(Map<Class, EntityPart> parts) {
+        this.parts = parts;
+    }
+
+    public float getX() {
+        return x;
+    }
+
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    public float getY() {
+        return y;
+    }
+
+    public void setY(float y) {
+        this.y = y;
+    }
+
+    public float getDx() {
+        return dx;
+    }
+
+    public void setDx(float dx) {
+        this.dx = dx;
+    }
+
+    public float getDy() {
+        return dy;
+    }
+
+    public void setDy(float dy) {
+        this.dy = dy;
+    }
+
+    public float getRadians() {
+        return radians;
+    }
+
+    public void setRadians(float radians) {
+        this.radians = radians;
+    }
+
+    public float getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(float speed) {
+        this.speed = speed;
+    }
+
+    public float getRotationSpeed() {
+        return rotationSpeed;
+    }
+
+    public void setRotationSpeed(float rotationSpeed) {
+        this.rotationSpeed = rotationSpeed;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
 
     public Entity() {
         parts = new ConcurrentHashMap<>();
@@ -52,6 +133,14 @@ public class Entity implements Serializable {
 
     public String getID() {
         return ID.toString();
+    }
+
+    public float getShapeX() {
+        return x;
+    }
+
+    public float getShapeY() {
+        return y;
     }
 
 }
