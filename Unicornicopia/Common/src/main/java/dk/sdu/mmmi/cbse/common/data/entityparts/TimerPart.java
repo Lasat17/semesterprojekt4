@@ -12,8 +12,7 @@ import dk.sdu.mmmi.cbse.common.data.GameData;
  *
  * @author Alexander
  */
-public class TimerPart
-        implements EntityPart {
+public class TimerPart implements EntityPart {
 
     private float expiration;
 
