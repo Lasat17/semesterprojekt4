@@ -18,7 +18,6 @@ import java.util.ArrayList;
  *
  * @author LavanSathiyaseelan
  */
-	private boolean right;
 public class Player extends Entity implements IGamePluginService {
 
     private boolean left;
