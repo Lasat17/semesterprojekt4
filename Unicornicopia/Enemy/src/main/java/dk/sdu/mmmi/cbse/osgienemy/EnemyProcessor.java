@@ -16,7 +16,7 @@ public class EnemyProcessor implements IEntityProcessingService {
 
     @Override
     public void process(GameData gameData, World world) {
-
+        /*
         for (Entity entity : world.getEntities(Enemy.class)) {
 
             PositionPart positionPart = entity.getPart(PositionPart.class);
@@ -34,10 +34,10 @@ public class EnemyProcessor implements IEntityProcessingService {
             movingPart.process(gameData, entity);
             positionPart.process(gameData, entity);            
             updateShape(entity);
-
-        }
+        */
     }
 
+    /*
     private void updateShape(Entity entity) {
         float[] shapex = entity.getShapeX();
         float[] shapey = entity.getShapeY();
@@ -61,7 +61,7 @@ public class EnemyProcessor implements IEntityProcessingService {
         entity.setShapeX(shapex);
         entity.setShapeY(shapey);
     }
-
+*/
     //TODO: Dependency injection via Declarative Services
     public void setBulletService(BulletSPI bulletService) {
         this.bulletService = bulletService;
