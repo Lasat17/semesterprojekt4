@@ -12,13 +12,15 @@ import dk.sdu.mmmi.cbse.common.data.GameData;
 import dk.sdu.mmmi.cbse.common.data.World;
 
 import dk.sdu.mmmi.cbse.common.services.IGamePluginService;
+import dk.sdu.mmmi.cbse.commonpickup.Elixir;
 import java.util.ArrayList;
 
 /**
  *
  * @author LavanSathiyaseelan
  */
-public class Player extends Entity implements IGamePluginService {
+public class Player extends Entity implements IGamePluginService
+{
 
     private boolean left;
     private boolean right;
@@ -36,7 +38,8 @@ public class Player extends Entity implements IGamePluginService {
 
     private ArrayList<Object> inventory;
 
-    public Player(ArrayList<Bullet> bullets) {
+    public Player(ArrayList<Bullet> bullets)
+    {
         this.bullets = bullets;
         defence = 1;
         health = 100;
@@ -53,69 +56,101 @@ public class Player extends Entity implements IGamePluginService {
 
     }
 
-    public void increaseDefence(Object Item) {
-        //defence = defence * (1 - Item.getDefenceValue());
+    public void useElixir(Elixir elixir)
+    {
+        switch (elixir.getType())
+        {
+            case "health":
+                        health =+ (int)elixir.getValue();
+                break;
+
+            case "defence":
+                defence = defence * (1 - elixir.getValue());
+                break;
+
+            case "movement":
+                maxSpeed = maxSpeed * elixir.getValue();
+                acceleration = acceleration * elixir.getValue();
+                break;
+        }
     }
 
-    public void pickUpItem(Object Item) {
+
+    public void pickUpItem(Object Item)
+    {
         inventory.add(Item);
     }
 
-    public void increaseHealth(int healthBoost) {
-        health = +healthBoost;
-    }
 
-    public void decreaseHealth(int damage) {
+    public void decreaseHealth(int damage)
+    {
         health = (int) (health - (damage * defence));
     }
 
-    public void setLeft(boolean b) {
+    public void setLeft(boolean b)
+    {
         left = b;
     }
 
-    public void setRight(boolean b) {
+    public void setRight(boolean b)
+    {
         right = b;
     }
 
-    public void setUp(boolean b) {
+    public void setUp(boolean b)
+    {
         up = b;
     }
 
-    public void shoot() {
-        if (bullets.size() == MAX_BULLETS) {
+    public void shoot()
+    {
+        //Checks for active number of bullets, if the number is equal to MAX_BULLETS, nothing will happen.
+        //Otherwise a bullet will be added to the bullets arrayList
+        if (bullets.size() == MAX_BULLETS)
+        {
             return;
         }
         bullets.add(new Bullet(x, y, radians));
     }
 
-    public void update(float dt) {
+    public void update(float dt)
+    {
 
         // turning
-        if (left) {
+        if (left)
+        {
             radians += rotationSpeed * dt;
-        } else if (right) {
+        }
+        else if (right)
+        {
             radians -= rotationSpeed * dt;
         }
 
         // accelerating
-        if (up) {
+        if (up)
+        {
             dx += MathUtils.cos(radians) * acceleration * dt;
             dy += MathUtils.sin(radians) * acceleration * dt;
             acceleratingTimer += dt;
-            if (acceleratingTimer > 0.1f) {
+            if (acceleratingTimer > 0.1f)
+            {
                 acceleratingTimer = 0;
             }
-        } else {
+        }
+        else
+        {
             acceleratingTimer = 0;
         }
 
         // deceleration
         float vec = (float) Math.sqrt(dx * dx + dy * dy);
-        if (vec > 0 && !up) {
-            dx = 0;
-            dy = 0;
+        if (vec > 0 && !up)
+        {
+            dx -= (dx / vec) * deceleration * dt;
+            dy -= (dy / vec) * deceleration * dt;
         }
-        if (vec > maxSpeed) {
+        if (vec > maxSpeed)
+        {
             dx = (dx / vec) * maxSpeed;
             dy = (dy / vec) * maxSpeed;
         }
@@ -126,12 +161,14 @@ public class Player extends Entity implements IGamePluginService {
     }
 
     @Override
-    public void start(GameData gameData, World world) {
+    public void start(GameData gameData, World world)
+    {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void stop(GameData gameData, World world) {
+    public void stop(GameData gameData, World world)
+    {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
