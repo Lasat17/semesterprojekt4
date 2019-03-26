@@ -1,6 +1,5 @@
 package dk.sdu.mmmi.cbse.common.data;
 
-import java.awt.Image;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -13,12 +12,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class World extends java.lang.Object {
 
     private final Map<String, Entity> entityMap = new ConcurrentHashMap<>();
-    private final Image backgroundimage;
-    
-    public World(Image img){
-        backgroundimage = img;
-    }
-
     
     public String addEntity(Entity entity) {
         entityMap.put(entity.getID(), entity);

@@ -5,12 +5,17 @@ import org.osgi.framework.BundleContext;
 
 public class Activator implements BundleActivator {
 
-    public void start(BundleContext context) throws Exception {
-        // TODO add activation code here
+    @Override
+    public void start(BundleContext bundleContext) throws Exception {
+        String t = "background_test_1";
+        Map map = new Map(t);
+
+
     }
 
-    public void stop(BundleContext context) throws Exception {
-        // TODO add deactivation code here
-    }
+    @Override
+    public void stop(BundleContext bundleContext) throws Exception {
 
+
+    }
 }
