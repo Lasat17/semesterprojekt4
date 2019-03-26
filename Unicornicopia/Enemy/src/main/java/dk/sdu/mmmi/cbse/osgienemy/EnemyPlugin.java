@@ -7,14 +7,10 @@ import dk.sdu.mmmi.cbse.common.data.entityparts.LifePart;
 import dk.sdu.mmmi.cbse.common.data.entityparts.MovingPart;
 import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
 import dk.sdu.mmmi.cbse.common.enemy.Enemy;
-import dk.sdu.mmmi.cbse.common.enemy.Troll;
-import dk.sdu.mmmi.cbse.common.enemy.Wraith;
-import dk.sdu.mmmi.cbse.common.enemy.Zombie;
 import dk.sdu.mmmi.cbse.common.services.IGamePluginService;
 
 public class EnemyPlugin implements IGamePluginService {
     private String enemyID;
-    String enemyType = "";
 
     public EnemyPlugin() {
     }
@@ -22,11 +18,11 @@ public class EnemyPlugin implements IGamePluginService {
     @Override
     public void start(GameData gameData, World world) {
         // Add entities to the world
-        Entity enemy = createEnemy();
+        Entity enemy = createEnemy("Zombie");
         enemyID = world.addEntity(enemy);        
     }
 
-    private Entity createEnemy() {
+    private Entity createEnemy(String enemyType) {
         Entity enemy = new Enemy();
         float deacceleration;
         float acceleration;
@@ -36,10 +32,6 @@ public class EnemyPlugin implements IGamePluginService {
         float y;
         float radians;
 
-        if(enemy instanceof Troll) enemyType = "Troll";
-        if(enemy instanceof Wraith) enemyType = "Wraith";
-        if(enemy instanceof Zombie) enemyType = "Zombie";
-        
         switch(enemyType){
             case "Troll": 
                 deacceleration = 500;
