@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/Unicornicopia" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/Bullet" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/Common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/CommonBullet" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/CommonEnemy" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/CommonEntity" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/CommonEntity" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/CommonMap" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/CommonPickUp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/CommonWeapon" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/CommonWorldObject" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/CommonWorldTransport" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/Core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/Enemy" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/OSGiExtender" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/OSGiLibGDX" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/OSGiUpdater" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/Player" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/UserInterface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/application" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Unicornicopia/branding" charset="UTF-8" />
+  </component>
+</project>

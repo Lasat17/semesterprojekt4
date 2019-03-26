@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/Bullet/Bullet.iml" filepath="$PROJECT_DIR$/Unicornicopia/Bullet/Bullet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/Common/Common.iml" filepath="$PROJECT_DIR$/Unicornicopia/Common/Common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/CommonBullet/CommonBullet.iml" filepath="$PROJECT_DIR$/Unicornicopia/CommonBullet/CommonBullet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/CommonEnemy/CommonEnemy.iml" filepath="$PROJECT_DIR$/Unicornicopia/CommonEnemy/CommonEnemy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/CommonMap/CommonMap.iml" filepath="$PROJECT_DIR$/Unicornicopia/CommonMap/CommonMap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/CommonPickUp/CommonPickUp.iml" filepath="$PROJECT_DIR$/Unicornicopia/CommonPickUp/CommonPickUp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/CommonWeapon/CommonWeapon.iml" filepath="$PROJECT_DIR$/Unicornicopia/CommonWeapon/CommonWeapon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/CommonWorldObject/CommonWorldObject.iml" filepath="$PROJECT_DIR$/Unicornicopia/CommonWorldObject/CommonWorldObject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/CommonWorldTransport/CommonWorldTransport.iml" filepath="$PROJECT_DIR$/Unicornicopia/CommonWorldTransport/CommonWorldTransport.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/Core/Core.iml" filepath="$PROJECT_DIR$/Unicornicopia/Core/Core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/Enemy/Enemy.iml" filepath="$PROJECT_DIR$/Unicornicopia/Enemy/Enemy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/OSGiExtender/OSGiExtender.iml" filepath="$PROJECT_DIR$/Unicornicopia/OSGiExtender/OSGiExtender.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/OSGiLibGDX/OSGiLibGDX.iml" filepath="$PROJECT_DIR$/Unicornicopia/OSGiLibGDX/OSGiLibGDX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/OSGiUpdater/OSGiUpdater.iml" filepath="$PROJECT_DIR$/Unicornicopia/OSGiUpdater/OSGiUpdater.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/Player/Player.iml" filepath="$PROJECT_DIR$/Unicornicopia/Player/Player.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Unicornicopia.iml" filepath="$PROJECT_DIR$/.idea/Unicornicopia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/application/Unicornicopia-app.iml" filepath="$PROJECT_DIR$/Unicornicopia/application/Unicornicopia-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/branding/Unicornicopia-branding.iml" filepath="$PROJECT_DIR$/Unicornicopia/branding/Unicornicopia-branding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/Unicornicopia-parent.iml" filepath="$PROJECT_DIR$/Unicornicopia/Unicornicopia-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicornicopia/UserInterface/UserInterface.iml" filepath="$PROJECT_DIR$/Unicornicopia/UserInterface/UserInterface.iml" />
+    </modules>
+  </component>
+</project>
