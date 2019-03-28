@@ -4,7 +4,7 @@ import dk.sdu.mmmi.cbse.common.data.Entity;
 
 /**
  *
- * @author corfixen
+ * @author 
  */
 public class Enemy extends Entity {
 }

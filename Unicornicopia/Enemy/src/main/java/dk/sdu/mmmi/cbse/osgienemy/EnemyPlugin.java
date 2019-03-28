@@ -18,27 +18,77 @@ public class EnemyPlugin implements IGamePluginService {
     @Override
     public void start(GameData gameData, World world) {
         // Add entities to the world
-        Entity enemy = createEnemyShip(gameData);
-        enemyID = world.addEntity(enemy);
-        
+        Entity enemy = createEnemy("Zombie");
+        enemyID = world.addEntity(enemy);        
     }
 
-    private Entity createEnemyShip(GameData gameData) {
-        Entity enemyShip = new Enemy();
+    private Entity createEnemy(String enemyType) {
+        Entity enemy = new Enemy();
+        float deacceleration;
+        float acceleration;
+        float maxSpeed;
+        float rotationSpeed;
+        float x;
+        float y;
+        float radians;
 
-        float deacceleration = 10;
-        float acceleration = 200;
-        float maxSpeed = 300;
-        float rotationSpeed = 5;
-        float x = gameData.getDisplayWidth() / 3;
-        float y = gameData.getDisplayHeight() / 3;
-        float radians = 3.1415f / 2;
-        enemyShip.add(new LifePart(3));
-        enemyShip.setRadius(4);
-        enemyShip.add(new MovingPart(deacceleration, acceleration, maxSpeed, rotationSpeed));
-        enemyShip.add(new PositionPart(x, y, radians));
+        switch(enemyType){
+            case "Troll": 
+                deacceleration = 500;
+                acceleration = 100;
+                maxSpeed = 100;
+                rotationSpeed = 5;
+                x = 50;
+                y = 50;
+                radians = 3.1415f / 2;
+                enemy.add(new LifePart(80));
+                enemy.setRadius(4);
+                enemy.add(new MovingPart(deacceleration, acceleration, maxSpeed, rotationSpeed));
+                enemy.add(new PositionPart(x, y, radians));
+                break;
+            case "Wraith":
+                deacceleration = 500;
+                acceleration = 150;
+                maxSpeed = 200;
+                rotationSpeed = 5;
+                x = 50;
+                y = 50;
+                radians = 3.1415f / 2;
+                enemy.add(new LifePart(50));
+                enemy.setRadius(4);
+                enemy.add(new MovingPart(deacceleration, acceleration, maxSpeed, rotationSpeed));
+                enemy.add(new PositionPart(x, y, radians));
+                break;
+            case "Zombie":
+                deacceleration = 500;
+                acceleration = 50;
+                maxSpeed = 175;
+                rotationSpeed = 5;
+                x = 50;
+                y = 50;
+                radians = 3.1415f / 2;
+                enemy.add(new LifePart(30));
+                enemy.setRadius(4);
+                enemy.add(new MovingPart(deacceleration, acceleration, maxSpeed, rotationSpeed));
+                enemy.add(new PositionPart(x, y, radians));
+                break;
+            default:
+                //Boss
+                deacceleration = 500;
+                acceleration = 150;
+                maxSpeed = 200;
+                rotationSpeed = 5;
+                x = 50;
+                y = 50;
+                radians = 3.1415f / 2;
+                enemy.add(new LifePart(500));
+                enemy.setRadius(4);
+                enemy.add(new MovingPart(deacceleration, acceleration, maxSpeed, rotationSpeed));
+                enemy.add(new PositionPart(x, y, radians));
+                break;
+        }
         
-        return enemyShip;
+        return enemy;
     }
 
     @Override
