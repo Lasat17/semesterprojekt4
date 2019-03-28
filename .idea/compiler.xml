@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Bullet" />
+        <module name="Common" />
+        <module name="CommonBullet" />
+        <module name="CommonEnemy" />
+        <module name="CommonMap" />
+        <module name="CommonPickUp" />
+        <module name="CommonWeapon" />
+        <module name="CommonWorldObject" />
+        <module name="CommonWorldTransport" />
+        <module name="Core" />
+        <module name="Enemy" />
+        <module name="OSGiExtender" />
+        <module name="OSGiLibGDX" />
+        <module name="OSGiUpdater" />
+        <module name="Player" />
+        <module name="Unicornicopia-app" />
+        <module name="Unicornicopia-branding" />
+        <module name="UserInterface" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Bullet" target="1.8" />
+      <module name="Common" target="1.8" />
+      <module name="CommonBullet" target="1.8" />
+      <module name="CommonEnemy" target="1.8" />
+      <module name="CommonEntity" target="1.8" />
+      <module name="CommonMap" target="1.8" />
+      <module name="CommonPickUp" target="1.8" />
+      <module name="CommonWeapon" target="1.8" />
+      <module name="CommonWorldObject" target="1.8" />
+      <module name="CommonWorldTransport" target="1.8" />
+      <module name="Core" target="1.8" />
+      <module name="Enemy" target="1.8" />
+      <module name="OSGiExtender" target="1.8" />
+      <module name="OSGiLibGDX" target="1.8" />
+      <module name="OSGiUpdater" target="1.8" />
+      <module name="Player" target="1.8" />
+      <module name="Unicornicopia-app" target="1.8" />
+      <module name="Unicornicopia-branding" target="1.8" />
+      <module name="Unicornicopia-parent" target="1.5" />
+      <module name="UserInterface" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

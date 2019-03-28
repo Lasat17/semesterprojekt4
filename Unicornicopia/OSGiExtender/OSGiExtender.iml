@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.eclipse.osgi:org.eclipse.osgi.services:3.2.100.v20100503" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.osgi:org.eclipse.osgi:3.6.0.v20100517" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.felix:org.osgi.foundation:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.platform:org.eclipse.equinox.ds:1.4.400" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.platform:org.eclipse.equinox.util:1.0.500" level="project" />
+    <orderEntry type="module" module-name="CommonMap" />
+    <orderEntry type="module" module-name="Common" />
+    <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-api-annotations-common:RELEASE82" level="project" />
+    <orderEntry type="library" name="Maven: org.netbeans.api:org-openide-modules:RELEASE82" level="project" />
+    <orderEntry type="library" name="Maven: org.netbeans.api:org-openide-util:RELEASE82" level="project" />
+    <orderEntry type="library" name="Maven: org.netbeans.api:org-openide-util-lookup:RELEASE82" level="project" />
+    <orderEntry type="library" name="Maven: org.netbeans.api:org-openide-util-ui:RELEASE82" level="project" />
+    <orderEntry type="module" module-name="OSGiLibGDX" />
+    <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx:1.9.6" level="project" />
+    <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx-platform:1.9.6" level="project" />
+    <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx-backend-lwjgl:1.9.6" level="project" />
+    <orderEntry type="library" name="Maven: org.lwjgl.lwjgl:lwjgl:2.9.2" level="project" />
+    <orderEntry type="library" name="Maven: org.lwjgl.lwjgl:lwjgl-platform:natives-windows:2.9.2" level="project" />
+    <orderEntry type="library" name="Maven: org.lwjgl.lwjgl:lwjgl-platform:natives-linux:2.9.2" level="project" />
+    <orderEntry type="library" name="Maven: org.lwjgl.lwjgl:lwjgl-platform:natives-osx:2.9.2" level="project" />
+    <orderEntry type="library" name="Maven: net.java.jinput:jinput:2.0.5" level="project" />
+    <orderEntry type="library" name="Maven: net.java.jutils:jutils:1.0.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: net.java.jinput:jinput-platform:natives-linux:2.0.5" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: net.java.jinput:jinput-platform:natives-windows:2.0.5" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: net.java.jinput:jinput-platform:natives-osx:2.0.5" level="project" />
+    <orderEntry type="library" name="Maven: org.lwjgl.lwjgl:lwjgl_util:2.9.2" level="project" />
+    <orderEntry type="library" name="Maven: com.badlogicgames.jlayer:jlayer:1.0.1-gdx" level="project" />
+    <orderEntry type="library" name="Maven: org.jcraft:jorbis:0.0.17" level="project" />
+    <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx-box2d:1.9.6" level="project" />
+    <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx-freetype:1.9.6" level="project" />
+    <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx-platform:natives-desktop:1.9.6" level="project" />
+    <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx-box2d-platform:natives-desktop:1.9.6" level="project" />
+    <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx-freetype-platform:natives-desktop:1.9.6" level="project" />
+    <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx-jnigen:1.9.6" level="project" />
+    <orderEntry type="library" name="Maven: com.github.javaparser:javaparser-core:2.3.0" level="project" />
+    <orderEntry type="library" name="Maven: com.diffplug.osgi:com.diffplug.osgi.extension.sun.misc:0.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.diffplug.osgi:com.diffplug.osgi.extension.sun.reflect:0.0.0" level="project" />
+    <orderEntry type="module" module-name="Core" />
+  </component>
+</module>
