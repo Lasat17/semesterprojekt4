@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="Osmorc" url="file://$PROJECT_DIR$/Unicornicopia/Bullet" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/Unicornicopia/Common" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/Unicornicopia/CommonBullet" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/Unicornicopia/CommonEnemy" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/Unicornicopia/CommonEntity" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/Unicornicopia/CommonMap" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/Unicornicopia/CommonPickUp" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/Unicornicopia/CommonWeapon" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/Unicornicopia/CommonWorldObject" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/Unicornicopia/CommonWorldTransport" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/Unicornicopia/Core" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/Unicornicopia/Enemy" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/Unicornicopia/OSGiLibGDX" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/Unicornicopia/OSGiUpdater" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/Unicornicopia/Player" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/Unicornicopia/UserInterface" />
+  </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Unicornicopia/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Unicornicopia/CommonEntity/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="10" project-jdk-type="JavaSDK" />
+</project>
