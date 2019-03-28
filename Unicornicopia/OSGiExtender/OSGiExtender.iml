@@ -21,6 +21,7 @@
     <orderEntry type="library" name="Maven: org.netbeans.api:org-openide-util:RELEASE82" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-openide-util-lookup:RELEASE82" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-openide-util-ui:RELEASE82" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains:annotations:16.0.2" level="project" />
     <orderEntry type="module" module-name="OSGiLibGDX" />
     <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx:1.9.6" level="project" />
     <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx-platform:1.9.6" level="project" />

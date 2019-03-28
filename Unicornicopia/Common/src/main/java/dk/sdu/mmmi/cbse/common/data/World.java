@@ -25,6 +25,10 @@ public class World extends java.lang.Object {
     public void removeEntity(Entity entity) {
         entityMap.remove(entity.getID());
     }
+
+    public void removeMap(Entity map){
+        entityMap.remove(map);
+    }
     
     public Collection<Entity> getEntities() {
         return entityMap.values();
