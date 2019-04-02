@@ -2,17 +2,17 @@ package dk.sdu.mmmi.cbse.commonmap;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import dk.sdu.mmmi.cbse.common.data.Entity;
+import dk.sdu.mmmi.cbse.common.services.IGameMap;
 
 
-public class Map extends Entity {
+public class GameMap implements IGameMap {
     private int level;
     private String texturePath;
     private TextureRegion backgroundTexture;
     private java.util.Map<Room,Integer> rooms;
 
 
-    public Map(int level) {
+    public GameMap(int level) {
         this.level = level;
         texturePath = setBackgroundTexture(level);
         backgroundTexture = new TextureRegion(new Texture(texturePath));
@@ -20,19 +20,25 @@ public class Map extends Entity {
         constructPortal(level);
     }
 
-    private void constructRooms(int mapLevel){
+    @Override
+    public void constructRooms(int mapLevel){
         switch (mapLevel){
             case 1 :
+                Room room1 = new Room();
+                rooms.putIfAbsent(room1,1);
             case 2 :
+                Room room2 = new Room();
+                rooms.put(room2,1);
             case 3 :
             case 4 :
             default :
         }
     }
 
-    private void constructPortal(int mapLevel){
+    public void constructPortal(int mapLevel){
         switch (mapLevel){
             case 1 :
+                Portal portalOne = new Portal(2);
             case 2 :
             case 3 :
             case 4 :
@@ -52,11 +58,12 @@ public class Map extends Entity {
 
     */
 
-    private String setBackgroundTexture(int mapLevel){
+    @Override
+    public String setBackgroundTexture(int mapLevel){
         if(mapLevel == 1){
-            return "levelone";
+            return "Uniconrnicopia_map\\Unicornicopia\\assets\\level_1.png";
         }else if(mapLevel == 2){
-            return "leveltwo";
+            return "Uniconrnicopia_map\\Unicornicopia\\assets\\level_2.png";
         }else if(mapLevel == 3) {
             return "levelthree";
         }else if(mapLevel == 4) {

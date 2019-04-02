@@ -12,29 +12,6 @@ public class Door extends Entity {
         this.doorDirection = doorDirection;
     }
 
-    public Door createDoorNorth(){
-        return new Door(false, DoorDirection.DOOR_DIRECTION_NORTH);
-
-    }
-
-    public Door createDoorSouth(){
-        return new Door(false, DoorDirection.DOOR_DIRECTION_SOUTH);
-
-    }
-
-    public Door createDoorWest(){
-        return new Door(false, DoorDirection.DOOR_DIRECTION_WEST);
-
-    }
-
-    public Door createDoorEast(){
-        return new Door(false, DoorDirection.DOOR_DIRECTION_EAST);
-
-    }
-
-
-
-
 }
 
 

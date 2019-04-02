@@ -10,11 +10,10 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
 import dk.sdu.mmmi.cbse.common.data.World;
-import dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;
-import dk.sdu.mmmi.cbse.common.services.IGamePluginService;
-import dk.sdu.mmmi.cbse.common.services.IMapProcessingService;
-import dk.sdu.mmmi.cbse.common.services.IPostEntityProcessingService;
+import dk.sdu.mmmi.cbse.common.services.IGetMapProcessingService;
+import dk.sdu.mmmi.cbse.common.services.IProcessingService;
 import dk.sdu.mmmi.cbse.core.managers.GameInputProcessor;
+import services.MapProcessingService;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -28,15 +27,19 @@ public class Game implements ApplicationListener {
     private static OrthographicCamera cam;
     private ShapeRenderer sr;
     private final GameData gameData = new GameData();
-    private static World world;
-    private static final List<IEntityProcessingService> entityProcessorList = new CopyOnWriteArrayList<>();
-    private static final List<IGamePluginService> gamePluginList = new CopyOnWriteArrayList<>();
-    private static List<IPostEntityProcessingService> postEntityProcessorList = new CopyOnWriteArrayList<>();
-    private static List<IMapProcessingService> mapProcessingList = new CopyOnWriteArrayList<>();
+    private static World world = new World();
+
+    private List<IProcessingService> processingServiceList = new CopyOnWriteArrayList<>();
+    private List<IGetMapProcessingService> getMapProcessingServices = new CopyOnWriteArrayList();
 
     public Game(){
         init();
+        System.out.println(world.getGameMap()+ "game map");
     }
+
+
+
+
 
     private void init() {
 
@@ -48,6 +51,12 @@ public class Game implements ApplicationListener {
         cfg.resizable = false;
 
         new LwjglApplication(this, cfg);
+
+        //add all necessary processors to the list of processors
+        processingServiceList.add(new MapProcessingService());
+
+
+
     }
 
     @Override
@@ -97,17 +106,11 @@ public class Game implements ApplicationListener {
 
     private void update() {
         // Update
-        for (IEntityProcessingService entityProcessorService : entityProcessorList) {
-            entityProcessorService.process(gameData, world);
-        }
-
-        // Post Update
-        for (IPostEntityProcessingService postEntityProcessorService : postEntityProcessorList) {
-            postEntityProcessorService.process(gameData, world);
-        }
-
-        for (IMapProcessingService mapProcessingService : mapProcessingList){
-            mapProcessingService.process(gameData);
+        for (IProcessingService mapProcessor : processingServiceList) {
+            mapProcessor.process(gameData,world);
+            for (IGetMapProcessingService mapProcessor2 : getMapProcessingServices) {
+                world.setGameMap(mapProcessor2.getMap());
+            }
         }
     }
 
@@ -147,31 +150,13 @@ public class Game implements ApplicationListener {
     public void dispose() {
     }
 
-    public void addEntityProcessingService(IEntityProcessingService eps) {
-        this.entityProcessorList.add(eps);
+    public void addProcessingService(IProcessingService processingService){
+        processingServiceList.add(processingService);
     }
 
-    public void removeEntityProcessingService(IEntityProcessingService eps) {
-        this.entityProcessorList.remove(eps);
+    public void removeProcessingService(IProcessingService processingService){
+        processingServiceList.remove(processingService);
     }
 
-    public void addPostEntityProcessingService(IPostEntityProcessingService eps) {
-        postEntityProcessorList.add(eps);
-    }
-
-    public void removePostEntityProcessingService(IPostEntityProcessingService eps) {
-        postEntityProcessorList.remove(eps);
-    }
-
-    public void addGamePluginService(IGamePluginService plugin) {
-        this.gamePluginList.add(plugin);
-        plugin.start(gameData, world);
-
-    }
-
-    public void removeGamePluginService(IGamePluginService plugin) {
-        this.gamePluginList.remove(plugin);
-        plugin.stop(gameData, world);
-    }
 
 }

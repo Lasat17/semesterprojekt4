@@ -1,17 +1,8 @@
 package dk.sdu.mmmi.cbse.common.events;
 
-import dk.sdu.mmmi.cbse.common.data.Entity;
+public class MapChangeEvent extends Event {
 
-import java.io.Serializable;
-
-public class MapChangeEvent implements Serializable {
-    private final Entity source;
-
-    public MapChangeEvent(Entity source) {
-        this.source = source;
-    }
-
-    public Entity getSource() {
-        return source;
+    public MapChangeEvent(Object source) {
+        super(source);
     }
 }

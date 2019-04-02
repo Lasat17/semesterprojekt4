@@ -2,33 +2,35 @@ package services;
 
 import dk.sdu.mmmi.cbse.common.data.GameData;
 import dk.sdu.mmmi.cbse.common.data.World;
-import dk.sdu.mmmi.cbse.common.services.IMapProcessingService;
-import dk.sdu.mmmi.cbse.commonmap.Map;
+import dk.sdu.mmmi.cbse.common.events.MapChangeEvent;
+import dk.sdu.mmmi.cbse.common.services.IGameMap;
+import dk.sdu.mmmi.cbse.common.services.IGetMapProcessingService;
+import dk.sdu.mmmi.cbse.common.services.IProcessingService;
+import dk.sdu.mmmi.cbse.commonmap.GameMap;
 
-public class MapProcessingService implements IMapProcessingService {
-
+public class MapProcessingService implements IProcessingService, IGetMapProcessingService {
+    GameMap gameMap;
 
     @Override
-    public void process(GameData gameData) {
-        //things to do while map is running, check for player collisions with doors/portals etc.
+    public IGameMap getMap(){
+        return this.gameMap;
     }
 
     @Override
-    public void start(GameData gameData, World world) {
-        if(world.getEntities().contains(Map.class)){
-            //do nothing, world already contains a map
-        }else{
-            world.addEntity(new Map(1));
-        }
+    public void process(GameData gameData, World world) {
+            if(!world.mapExists()){
+                gameMap = new GameMap(1);
+                MapChangeEvent event = new MapChangeEvent(gameMap);
+                gameData.addEvent(event);
+            }
+
+            //if player collides with door/room etc. change room/level
+
 
     }
 
     @Override
-    public void stop(GameData gameData, World world) {
-        if(world.getEntities().contains(Map.class)){
-            Map mapToRemove = (Map) world.getEntities();
-            world.removeMap(mapToRemove);
-        }
-
+    public IProcessingService newInstanceOf() {
+        return this;
     }
 }

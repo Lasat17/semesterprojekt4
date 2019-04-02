@@ -1,6 +1,5 @@
 package dk.sdu.mmmi.cbse.common.events;
 
-import dk.sdu.mmmi.cbse.common.data.Entity;
 import java.io.Serializable;
 
 /**
@@ -8,13 +7,13 @@ import java.io.Serializable;
  * @author Mads
  */
 public class Event implements Serializable{
-    private final Entity source;
+    private final Object source;
 
-    public Event(Entity source) {
+    public Event(Object source) {
         this.source = source;
     }
 
-    public Entity getSource() {
+    public Object getSource() {
         return source;
     }
 }
