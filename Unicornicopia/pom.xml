@@ -72,7 +72,6 @@
     <module>CommonMap</module>
     <module>CommonPickUp</module>
     <module>Player</module>
-    <module>CommonEntity</module>
     <module>CommonWeapon</module>
     <module>UserInterface</module>
         <module>Common</module>

@@ -15,7 +15,6 @@ public class EnemyPlugin implements IProcessingService {
     public EnemyPlugin() {
     }
 
-    @Override
     public void start(GameData gameData, World world) {
         // Add entities to the world
         Entity enemy = createEnemyShip(gameData);
@@ -41,7 +40,6 @@ public class EnemyPlugin implements IProcessingService {
         return enemyShip;
     }
 
-    @Override
     public void stop(GameData gameData, World world) {
         // Remove entities
         world.removeEntity(enemyID);

@@ -61,9 +61,9 @@ public class GameMap implements IGameMap {
     @Override
     public String getBackgroundTexturePath(int mapLevel){
         if(mapLevel == 1){
-            return "Uniconrnicopia_map\\Unicornicopia\\assets\\level_1.png";
+            return "Unicornicopia\\assets\\level_1.png";
         }else if(mapLevel == 2){
-            return "Uniconrnicopia_map\\Unicornicopia\\assets\\level_2.png";
+            return "Unicornicopia\\assets\\level_2.png";
         }else if(mapLevel == 3) {
             return "levelthree";
         }else if(mapLevel == 4) {
