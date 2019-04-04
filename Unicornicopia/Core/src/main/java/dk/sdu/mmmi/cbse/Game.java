@@ -83,10 +83,10 @@ public class Game implements ApplicationListener {
     @Override
     public void render() {
 
-        String filename = world.getGameMap().getBackgroundTexturePath(world.getGameMap().getLevel());
+//        String filename = world.getGameMap().getBackgroundTexturePath(world.getGameMap().getLevel());
         BufferedImage img = null;
         try{
-            img = ImageIO.read(new File(filename));     
+            img = ImageIO.read(new File("Unicornicopia\\Unicornicopia\\assets\\test.jpg"));     
         }catch(IOException e){
             System.out.println("background image not found" + e );
         }
