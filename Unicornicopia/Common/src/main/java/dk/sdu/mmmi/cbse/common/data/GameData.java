@@ -1,6 +1,8 @@
 package dk.sdu.mmmi.cbse.common.data;
 
+import dk.sdu.mmmi.cbse.common.Interfaces.IGameMap;
 import dk.sdu.mmmi.cbse.common.events.Event;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -11,11 +13,21 @@ public class GameData {
     private int displayWidth;
     private int displayHeight;
     private final GameKeys keys = new GameKeys();
+    private IGameMap gameMap;
     private List<Event> events = new CopyOnWriteArrayList<>();
 
     public void addEvent(Event e) {
         events.add(e);
     }
+
+    public IGameMap getGameMap() {
+        return gameMap;
+    }
+
+    public void setGameMap(IGameMap gameMap) {
+        this.gameMap = gameMap;
+    }
+
 
     public void removeEvent(Event e) {
         events.remove(e);

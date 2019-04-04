@@ -2,7 +2,7 @@ package dk.sdu.mmmi.cbse.commonmap;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import dk.sdu.mmmi.cbse.common.services.IGameMap;
+import dk.sdu.mmmi.cbse.common.Interfaces.IGameMap;
 
 
 public class GameMap implements IGameMap {
@@ -14,7 +14,7 @@ public class GameMap implements IGameMap {
 
     public GameMap(int level) {
         this.level = level;
-        texturePath = setBackgroundTexture(level);
+        texturePath = getBackgroundTexturePath(level);
         backgroundTexture = new TextureRegion(new Texture(texturePath));
         constructRooms(level);
         constructPortal(level);
@@ -59,7 +59,7 @@ public class GameMap implements IGameMap {
     */
 
     @Override
-    public String setBackgroundTexture(int mapLevel){
+    public String getBackgroundTexturePath(int mapLevel){
         if(mapLevel == 1){
             return "Uniconrnicopia_map\\Unicornicopia\\assets\\level_1.png";
         }else if(mapLevel == 2){
@@ -73,9 +73,10 @@ public class GameMap implements IGameMap {
         return "levelone";
     }
 
-
-
-
+    @Override
+    public int getLevel() {
+        return this.level;
+    }
 
 
 }

@@ -1,6 +1,6 @@
 package dk.sdu.mmmi.cbse.common.data;
 
-import dk.sdu.mmmi.cbse.common.services.IGameMap;
+import dk.sdu.mmmi.cbse.common.Interfaces.IGameMap;
 
 import java.util.ArrayList;
 import java.util.Collection;

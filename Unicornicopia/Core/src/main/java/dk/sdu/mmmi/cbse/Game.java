@@ -10,6 +10,8 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
 import dk.sdu.mmmi.cbse.common.data.World;
+import dk.sdu.mmmi.cbse.common.events.Event;
+import dk.sdu.mmmi.cbse.common.events.MapChangeEvent;
 import dk.sdu.mmmi.cbse.common.services.IGetMapProcessingService;
 import dk.sdu.mmmi.cbse.common.services.IProcessingService;
 import dk.sdu.mmmi.cbse.core.managers.GameInputProcessor;
@@ -53,6 +55,7 @@ public class Game implements ApplicationListener {
         new LwjglApplication(this, cfg);
 
         //add all necessary processors to the list of processors
+
         processingServiceList.add(new MapProcessingService());
 
 
@@ -74,26 +77,21 @@ public class Game implements ApplicationListener {
 
     }
 
-    
+
+
     
     @Override
     public void render() {
 
-
-
-        String filename = "Unicornicopia\\AsteroidsOSGi\\background.png";
+        String filename = world.getGameMap().getBackgroundTexturePath(world.getGameMap().getLevel());
         BufferedImage img = null;
         try{
             img = ImageIO.read(new File(filename));     
         }catch(IOException e){
             System.out.println("background image not found" + e );
         }
-        
-        /* DO FIXING */
-        //world = new World(img);
-        
 
-        
+
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
@@ -104,14 +102,30 @@ public class Game implements ApplicationListener {
         draw();
     }
 
-    private void update() {
-        // Update
+    public void setGameMap(){
         for (IProcessingService mapProcessor : processingServiceList) {
             mapProcessor.process(gameData,world);
             for (IGetMapProcessingService mapProcessor2 : getMapProcessingServices) {
                 world.setGameMap(mapProcessor2.getMap());
             }
         }
+    }
+
+    private void updateMap(){
+        MapChangeEvent mapChange;
+        for (Event event : gameData.getEvents()) {
+            if(event.equals(MapChangeEvent.class)){
+                mapChange = (MapChangeEvent) event;
+                setGameMap();
+                gameData.removeEvent(mapChange);
+            }
+
+        }
+    }
+
+    private void update() {
+        // Update
+        updateMap();
     }
 
     private void draw() {

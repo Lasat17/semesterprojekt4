@@ -1,15 +1,19 @@
 package services;
 
+import dk.sdu.mmmi.cbse.common.Interfaces.IGameMap;
 import dk.sdu.mmmi.cbse.common.data.GameData;
 import dk.sdu.mmmi.cbse.common.data.World;
 import dk.sdu.mmmi.cbse.common.events.MapChangeEvent;
-import dk.sdu.mmmi.cbse.common.services.IGameMap;
 import dk.sdu.mmmi.cbse.common.services.IGetMapProcessingService;
 import dk.sdu.mmmi.cbse.common.services.IProcessingService;
 import dk.sdu.mmmi.cbse.commonmap.GameMap;
 
 public class MapProcessingService implements IProcessingService, IGetMapProcessingService {
-    GameMap gameMap;
+    private GameMap gameMap;
+
+    public MapProcessingService(){
+
+    }
 
     @Override
     public IGameMap getMap(){
@@ -29,8 +33,4 @@ public class MapProcessingService implements IProcessingService, IGetMapProcessi
 
     }
 
-    @Override
-    public IProcessingService newInstanceOf() {
-        return this;
-    }
 }
