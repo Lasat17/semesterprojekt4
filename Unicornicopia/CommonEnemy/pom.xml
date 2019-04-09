@@ -11,9 +11,9 @@
         <bundle.namespace>dk.sdu.mmmi</bundle.namespace>
     </properties>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>OSGiCommonEnemy</artifactId>
+    <artifactId>CommonEnemy</artifactId>
     <packaging>bundle</packaging>
-    <name>OSGiCommonEnemy</name>
+    <name>CommonEnemy</name>
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>

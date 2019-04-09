@@ -23,10 +23,10 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>dk.sdu.mmmi</groupId>
-    <artifactId>Unicornicopia</artifactId>
+    <artifactId>Unicornicopia-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>Unicornicopia (Pax)</name>
+    <name>Unicornicopia-parent</name>
 
     <!--
      | describe your project here
