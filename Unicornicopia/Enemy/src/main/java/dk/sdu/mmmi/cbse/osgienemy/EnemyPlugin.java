@@ -7,15 +7,14 @@ import dk.sdu.mmmi.cbse.common.data.entityparts.LifePart;
 import dk.sdu.mmmi.cbse.common.data.entityparts.MovingPart;
 import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
 import dk.sdu.mmmi.cbse.common.enemy.Enemy;
-import dk.sdu.mmmi.cbse.common.services.IGamePluginService;
+import dk.sdu.mmmi.cbse.common.services.IProcessingService;
 
-public class EnemyPlugin implements IGamePluginService {
+public class EnemyPlugin implements IProcessingService {
     private String enemyID;
 
     public EnemyPlugin() {
     }
 
-    @Override
     public void start(GameData gameData, World world) {
         // Add entities to the world
         Entity enemy = createEnemy("Zombie");
@@ -91,10 +90,13 @@ public class EnemyPlugin implements IGamePluginService {
         return enemy;
     }
 
-    @Override
     public void stop(GameData gameData, World world) {
         // Remove entities
         world.removeEntity(enemyID);
     }
 
+    @Override
+    public void process(GameData gameData, World world) {
+
+    }
 }

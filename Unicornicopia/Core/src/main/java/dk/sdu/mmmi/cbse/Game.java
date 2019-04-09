@@ -2,40 +2,46 @@ package dk.sdu.mmmi.cbse;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Graphics;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
 import dk.sdu.mmmi.cbse.common.data.World;
-import dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;
-import dk.sdu.mmmi.cbse.common.services.IGamePluginService;
-import dk.sdu.mmmi.cbse.common.services.IPostEntityProcessingService;
+import dk.sdu.mmmi.cbse.common.events.Event;
+import dk.sdu.mmmi.cbse.common.events.MapChangeEvent;
+import dk.sdu.mmmi.cbse.common.services.IGetMapProcessingService;
+import dk.sdu.mmmi.cbse.common.services.IProcessingService;
 import dk.sdu.mmmi.cbse.core.managers.GameInputProcessor;
+import services.MapProcessingService;
+
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-import javax.imageio.ImageIO;
 
 public class Game implements ApplicationListener {
 
     private static OrthographicCamera cam;
     private ShapeRenderer sr;
     private final GameData gameData = new GameData();
-    private static World world;
-    private static final List<IEntityProcessingService> entityProcessorList = new CopyOnWriteArrayList<>();
-    private static final List<IGamePluginService> gamePluginList = new CopyOnWriteArrayList<>();
-    private static List<IPostEntityProcessingService> postEntityProcessorList = new CopyOnWriteArrayList<>();
+    private static World world = new World();
+
+    private List<IProcessingService> processingServiceList = new CopyOnWriteArrayList<>();
+    private List<IGetMapProcessingService> getMapProcessingServices = new CopyOnWriteArrayList();
 
     public Game(){
         init();
+        System.out.println(world.getGameMap()+ "game map");
     }
+
+
+
+
 
     private void init() {
 
@@ -47,6 +53,13 @@ public class Game implements ApplicationListener {
         cfg.resizable = false;
 
         new LwjglApplication(this, cfg);
+
+        //add all necessary processors to the list of processors
+
+        processingServiceList.add(new MapProcessingService());
+
+
+
     }
 
     @Override
@@ -64,24 +77,21 @@ public class Game implements ApplicationListener {
 
     }
 
-    
+
+
     
     @Override
     public void render() {
-       
-        String filename = "Unicornicopia\\AsteroidsOSGi\\background.png";
+
+//        String filename = world.getGameMap().getBackgroundTexturePath(world.getGameMap().getLevel());
         BufferedImage img = null;
         try{
-            img = ImageIO.read(new File(filename));     
+            img = ImageIO.read(new File("Unicornicopia\\Unicornicopia\\assets\\test.jpg"));     
         }catch(IOException e){
             System.out.println("background image not found" + e );
         }
-        
-        /* DO FIXING */
-        //world = new World(img);
-        
-       
-        
+
+
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
@@ -92,16 +102,30 @@ public class Game implements ApplicationListener {
         draw();
     }
 
+    public void setGameMap(){
+        for (IProcessingService mapProcessor : processingServiceList) {
+            mapProcessor.process(gameData,world);
+            for (IGetMapProcessingService mapProcessor2 : getMapProcessingServices) {
+                world.setGameMap(mapProcessor2.getMap());
+            }
+        }
+    }
+
+    private void updateMap(){
+        MapChangeEvent mapChange;
+        for (Event event : gameData.getEvents()) {
+            if(event.equals(MapChangeEvent.class)){
+                mapChange = (MapChangeEvent) event;
+                setGameMap();
+                gameData.removeEvent(mapChange);
+            }
+
+        }
+    }
+
     private void update() {
         // Update
-        for (IEntityProcessingService entityProcessorService : entityProcessorList) {
-            entityProcessorService.process(gameData, world);
-        }
-
-        // Post Update
-        for (IPostEntityProcessingService postEntityProcessorService : postEntityProcessorList) {
-            postEntityProcessorService.process(gameData, world);
-        }
+        updateMap();
     }
 
     private void draw() {
@@ -140,31 +164,13 @@ public class Game implements ApplicationListener {
     public void dispose() {
     }
 
-    public void addEntityProcessingService(IEntityProcessingService eps) {
-        this.entityProcessorList.add(eps);
+    public void addProcessingService(IProcessingService processingService){
+        processingServiceList.add(processingService);
     }
 
-    public void removeEntityProcessingService(IEntityProcessingService eps) {
-        this.entityProcessorList.remove(eps);
+    public void removeProcessingService(IProcessingService processingService){
+        processingServiceList.remove(processingService);
     }
 
-    public void addPostEntityProcessingService(IPostEntityProcessingService eps) {
-        postEntityProcessorList.add(eps);
-    }
-
-    public void removePostEntityProcessingService(IPostEntityProcessingService eps) {
-        postEntityProcessorList.remove(eps);
-    }
-
-    public void addGamePluginService(IGamePluginService plugin) {
-        this.gamePluginList.add(plugin);
-        plugin.start(gameData, world);
-
-    }
-
-    public void removeGamePluginService(IGamePluginService plugin) {
-        this.gamePluginList.remove(plugin);
-        plugin.stop(gameData, world);
-    }
 
 }

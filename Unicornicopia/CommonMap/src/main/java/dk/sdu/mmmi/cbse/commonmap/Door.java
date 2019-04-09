@@ -3,13 +3,13 @@ package dk.sdu.mmmi.cbse.commonmap;
 import dk.sdu.mmmi.cbse.common.data.Entity;
 
 public class Door extends Entity {
+    private DoorDirection doorDirection;
+    private boolean lockedStatus;
 
 
-
-    private void createDoor(){
-        Door exit = new Door();
-        exit.setX(60);
-        exit.setY(100);
+    public Door(boolean lockedStatus, DoorDirection doorDirection){
+        this.lockedStatus = lockedStatus;
+        this.doorDirection = doorDirection;
     }
 
 }
