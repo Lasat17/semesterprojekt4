@@ -15,7 +15,6 @@ import dk.sdu.mmmi.cbse.common.events.MapChangeEvent;
 import dk.sdu.mmmi.cbse.common.services.IGetMapProcessingService;
 import dk.sdu.mmmi.cbse.common.services.IProcessingService;
 import dk.sdu.mmmi.cbse.core.managers.GameInputProcessor;
-import services.MapProcessingService;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -56,7 +55,6 @@ public class Game implements ApplicationListener {
 
         //add all necessary processors to the list of processors
 
-        processingServiceList.add(new MapProcessingService());
 
 
 

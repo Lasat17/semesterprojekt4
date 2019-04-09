@@ -27,12 +27,6 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>Common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
             <artifactId>CommonWeapon</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -50,6 +44,11 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>CommonPickUp</artifactId>
             <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>dk.sdu.mmmi.build</groupId>
+            <artifactId>Common</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

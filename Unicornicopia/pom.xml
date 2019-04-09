@@ -1,90 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <!--
+     | put company details here
+    <organization>
+      <name>...</name>
+      <url>http://...</url>
+    </organization>
+    -->
+
+    <!--
+     | put license details here
+    <licenses>
+      <license>
+        <name>...</name>
+        <url>http://...</url>
+        <comments>
+        </comments>
+      </license>
+    </licenses>
+    -->
+
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>dk.sdu.mmmi.cbse</groupId>
-    <artifactId>Unicornicopia-parent</artifactId>
+    <groupId>dk.sdu.mmmi</groupId>
+    <artifactId>Unicornicopia</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
 
-    <name>Unicornicopia-parent</name>
+    <name>Unicornicopia (Pax)</name>
 
-    <repositories>
-        <!--
-        Repository hosting NetBeans modules, especially APIs.
-        Versions are based on IDE releases, e.g.: RELEASE691
-        To create your own repository, use: nbm:populate-repository
-        -->
-        <repository>
-            <id>netbeans</id>
-            <name>NetBeans</name>
-            <url>http://bits.netbeans.org/nexus/content/groups/netbeans/</url>
-        </repository>
-    </repositories>
+    <!--
+     | describe your project here
+    -->
 
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>nbm-maven-plugin</artifactId>
-                    <version>3.13</version>
-                    <extensions>true</extensions>
-                    <configuration>
-                        <brandingToken>${brandingToken}</brandingToken>
-                        <cluster>${brandingToken}</cluster>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <!-- NetBeans 6.9+ requires JDK 6, starting NetBeans 7.4 source 1.7 is required -->
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.7.0</version>
-                    <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>2.4</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.felix</groupId>
-                    <artifactId>maven-bundle-plugin</artifactId>
-                    <version>3.3.0</version>
-                    <extensions>true</extensions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
-
-    <modules>
-        <module>application</module>
-        <module>branding</module>
-        <module>OSGiExtender</module>
-        <module>OSGiLibGDX</module>
-        <module>OSGiUpdater</module>
-    <module>Bullet</module>
-    <module>CommonWorldTransport</module>
-        <module>CommonWorldObject</module>
-    <module>CommonMap</module>
-    <module>CommonPickUp</module>
-    <module>Player</module>
-    <module>CommonWeapon</module>
-    <module>UserInterface</module>
-        <module>Common</module>
-        <module>CommonBullet</module>
-        <module>Core</module>
-        <module>CommonEnemy</module>
-        <module>Enemy</module>
-    </modules>
+    <description>Generated using Pax-Construct</description>
 
     <properties>
-        <netbeans.version>RELEASE82</netbeans.version>
-        <brandingToken>unicornipiaosgi</brandingToken>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--
+         | some example OSGi runtime properties
+        -->
+        <org.osgi.service.http.port>8080</org.osgi.service.http.port>
+        <org.osgi.service.http.port.secure>8443</org.osgi.service.http.port.secure>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    
     </properties>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>provision</module>
+        <module>OSGiLibGDX</module>
+        <module>Bullet</module>
+        <module>Common</module>
+        <module>CommonBullet</module>
+        <module>CommonEnemy</module>
+        <module>CommonMap</module>
+        <module>CommonPickUp</module>
+        <module>CommonWeapon</module>
+        <module>CommonWorldObject</module>
+        <module>CommonWorldTransport</module>
+        <module>Core</module>
+        <module>Enemy</module>
+        <module>Player</module>
+        <module>poms</module>
+        <module>UserInterface</module>
+    <module>CommonEntity</module>
+  </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.ops4j</groupId>
+                <artifactId>maven-pax-plugin</artifactId>
+                <version>1.6.0</version>
+                <configuration>
+                    <!--
+                     | some example Pax-Runner settings
+                    -->
+                    <provision>
+                        <param>--platform=felix</param>
+                        <param>--vmOptions="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"</param>
+                    </provision>                    
+                </configuration>
+                <executions>
+                    <!--
+                     | uncomment to auto-generate IDE files
+                    <execution>
+                      <id>ide-support</id>
+                      <goals>
+                        <goal>eclipse</goal>
+                      </goals>
+                    </execution>
+                    -->
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
