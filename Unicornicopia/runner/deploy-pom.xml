@@ -2,11 +2,11 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>dk.sdu.mmmi.Unicornicopia.build</groupId>
+  <groupId>dk.sdu.mmmi.Unicornicopia-parent.build</groupId>
   <artifactId>deployment</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Unicornicopia (Pax)</name>
+  <name>Unicornicopia-parent</name>
   <description>Generated using Pax-Construct</description>
   <properties>
     <org.osgi.service.http.port>8080</org.osgi.service.http.port>
@@ -81,7 +81,7 @@
     </dependency>
     <dependency>
       <groupId>dk.sdu.mmmi.build</groupId>
-      <artifactId>OSGiCommonEnemy</artifactId>
+      <artifactId>CommonEnemy</artifactId>
       <version>1.0-SNAPSHOT</version>
       <type>bundle</type>
       <scope>provided</scope>
@@ -148,7 +148,7 @@
     </dependency>
     <dependency>
       <groupId>dk.sdu.mmmi.build</groupId>
-      <artifactId>OSGiEnemy</artifactId>
+      <artifactId>Enemy</artifactId>
       <version>1.0-SNAPSHOT</version>
       <type>bundle</type>
       <scope>provided</scope>
@@ -180,31 +180,26 @@
     </dependency>
     <dependency>
       <groupId>dk.sdu.mmmi.cbse</groupId>
+      <artifactId>CommonPickUp</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>dk.sdu.mmmi.build</groupId>
       <artifactId>Core</artifactId>
       <version>1.0-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>dk.sdu.mmmi.cbse</groupId>
-      <artifactId>OSGiLibGDX</artifactId>
-      <version>1.0-SNAPSHOT</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>dk.sdu.mmmi.cbse</groupId>
-      <artifactId>CommonMap</artifactId>
-      <version>1.0-SNAPSHOT</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>dk.sdu.mmmi.cbse</groupId>
-      <artifactId>CommonPickUp</artifactId>
-      <version>1.0-SNAPSHOT</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>dk.sdu.mmmi.cbse</groupId>
       <artifactId>UserInterface</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <type>bundle</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>dk.sdu.mmmi</groupId>
+      <artifactId>CommonEntity</artifactId>
       <version>1.0-SNAPSHOT</version>
       <type>bundle</type>
       <scope>provided</scope>

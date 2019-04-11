@@ -4,7 +4,7 @@
 
     <parent>
         <groupId>dk.sdu.mmmi</groupId>
-        <artifactId>PaxAteroids</artifactId>
+        <artifactId>Unicornicopia-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
